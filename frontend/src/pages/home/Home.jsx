@@ -1,5 +1,6 @@
 
 import Banner from './Banner'
+import News from './News'
 import Recommened from './Recomended'
 import TopSellers from './TopSellers'
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <Banner/>
     <TopSellers/>
     <Recommened/>
+    <News/>
     </>
   )
 }
