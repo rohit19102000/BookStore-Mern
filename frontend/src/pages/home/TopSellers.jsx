@@ -8,35 +8,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
+import { useFetchAllBooksQuery } from '../../redux/Features/cart/booksApi';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+const categories = ["Choose a genre", "Business", "Fiction", "Horror", "Adventure"]
+
 function TopSellers() {
 
-const [books,setBooks] =useState([]);
-
-    
-const categories = ["Choose a genre", "Business", "Fiction", "Horror", "Adventure"]
 
 const [ selectedCategory, setSelectedCategory ] = useState("Choose a genre");
 
-useEffect(()=>{
-        fetch("books.json")
-        .then(res => res.json())
-        .then((data)=> setBooks(data));
-    },[])
+const {data:books = []} = useFetchAllBooksQuery()
+
+
 
 
 
     const filteredBooks = selectedCategory === "Choose a genre" ? books : books.filter(book => book.category === selectedCategory.toLowerCase())
 
-
-    console.log(filteredBooks)
     return (
     <div className='py-10'>        
-        <h2 className='text-3xl font-semibold mb-6'>Top Sellers</h2>
+        <h2 className='text-3xl font-semibold mb-6'>Top Sellers</h2> 
         
         {/* category filtering */}
 
@@ -51,6 +47,7 @@ useEffect(()=>{
                     }
                 </select>
             </div>
+
 
             <Swiper
                 slidesPerView={1}
