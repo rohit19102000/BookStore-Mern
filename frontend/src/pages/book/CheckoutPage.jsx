@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useAuth } from "../../Context/AuthContext";
 
 const CheckoutPage = () => {
 
@@ -10,7 +11,7 @@ const CheckoutPage = () => {
   const cartItems = useSelector(state => state.cart.cartItems);
   const totalPrice = cartItems.reduce((acc, item) => acc + item.newPrice, 0).toFixed(2);
 
-  const   currentUser = true;
+    const { currentUser } = useAuth()
   const {
       register,
       handleSubmit,

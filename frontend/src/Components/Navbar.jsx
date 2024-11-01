@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import avatarImg from '../assets/avatar.png'
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useAuth } from "../Context/AuthContext";
 
 
 
@@ -24,7 +25,11 @@ function Navbar() {
 
     const  [isDropdownOpen, setIsDropdownOpen] = useState(false)
     
-    const currentUser = false;
+   const { currentUser , logout } =  useAuth()
+
+   const handleLogOut = () =>{
+    logout()
+   }
 
   return (
    
@@ -77,7 +82,7 @@ function Navbar() {
     }
      <li>
       <button
-        // onClick={handleLogOut}
+        onClick={handleLogOut}
          className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Logout</button>
     </li>
 </ul>
