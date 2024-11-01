@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import BookCard from '../book/BookCart'
-import { useFetchAllBooksQuery } from '../../redux/Features/cart/booksApi';
+import { useFetchAllBooksQuery } from '../../redux/Features/books/booksApi';
 
 
 

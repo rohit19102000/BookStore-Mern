@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import { getImgUrl } from '../../utils/getImgUrl';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/Features/cart/cartSlice';
-import { useFetchBookByIdQuery } from '../../redux/Features/cart/booksApi';
+import { useFetchBookByIdQuery } from '../../redux/Features/books/booksApi';
 
 const SingleBook = () => {
     const {id} = useParams();

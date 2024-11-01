@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
-import { useFetchAllBooksQuery } from '../../redux/Features/cart/booksApi';
+import { useFetchAllBooksQuery } from '../../redux/Features/books/booksApi';
 
 // Import Swiper styles
 import 'swiper/css';
